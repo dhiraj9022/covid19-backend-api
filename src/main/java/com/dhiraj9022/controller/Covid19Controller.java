@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/api/covid-data")
+@RequestMapping("/api/v1/covid-data")
 public class Covid19Controller {
 
     private final Covid19Service covid19Service;
@@ -24,7 +24,7 @@ public class Covid19Controller {
     }
 
     @GetMapping("/by-date")
-    public String getCovidDataDate(@RequestParam LocalDate date) {
+    public String getCovidDataDate(@RequestParam String date) {
         return covid19Service.getCovidDataByDate(date);
     }
 
